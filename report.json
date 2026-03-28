@@ -1,0 +1,738 @@
+{
+  "timestamp": "2026-03-28T07:34:17.680Z",
+  "total_endpoints": 16,
+  "results": [
+    {
+      "tool_slug": "GMAIL_LIST_MESSAGES",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/messages",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /gmail/v1/users/me/messages returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "messages": [
+          {
+            "id": "19d335bc49f3ed53",
+            "threadId": "19d335bba9991684"
+          },
+          {
+            "id": "19d335bbaaf99504",
+            "threadId": "19d335bbaaf99504"
+          },
+          {
+            "id": "19d335bba9991684",
+            "threadId": "19d335bba9991684"
+          },
+          {
+            "id": "19d333dc2872f0cf",
+            "threadId": "19d333dc2872f0cf"
+          },
+          {
+            "id": "19d333517999c4ae",
+            "threadId": "19d3334f95f7f523"
+          }
+        ],
+        "nextPageToken": "[REDACTED_PHONE]86577",
+        "resultSizeEstimate": 201
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_GET_MESSAGE",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/messages/{messageId}",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /gmail/v1/users/me/messages/{messageId} returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "_truncated": true,
+        "_original_bytes": 18367,
+        "_preview": "{\"id\":\"19d335bc49f3ed53\",\"threadId\":\"19d335bba9991684\",\"labelIds\":[\"UNREAD\",\"CATEGORY_UPDATES\",\"INBOX\"],\"snippet\":\"Address not found Your message wasn&#39;t delivered to [REDACTED_EMAIL] because the domain example.com couldn&#39;t be found. Check for typos or unnecessary spaces and try again. LEARN MORE This\",\"payload\":{\"partId\":\"\",\"mimeType\":\"multipart/report\",\"filename\":\"\",\"headers\":[{\"name\":\"Delivered-To\",\"value\":\"[REDACTED_EMAIL]\"},{\"name\":\"Received\",\"value\":\"by 2002:a05:6638:411d:b0:5d4:784:e62c with SMTP id ay29csp355695jab;        Sat, 28 Mar 2026 00:32:25 -0700 (PDT)\"},{\"name\":\"X-Received\",\"value\":\"by 2002:a05:6830:6adc:b0:7d9:b58e:55f2 with SMTP id 46e09a7af769-7d9faef5ff3mr2714069a34.24.[REDACTED_PHONE];        Sat, 28 Mar 2026 00:32:25 -0700 (PDT)\"},{\"name\":\"ARC-Seal\",\"value\":\"i=1; a=rsa-sha256; t=[REDACTED_PHONE]; cv=none;        d=google.com; s=arc-20240605;        b=EA63W7AIbYWLurpc6LfOhceOxdI7cuVW1WrFwoXuDrJCdAvMjVQ/ajx8OlmIecnRp9         2LlfyBMIwUvQyasIkYYZb33xiXptFyx8hghdyQeYCR+epB45fOunCHGoXXm+QReorWd8         XfQvnFul8oT6NKF3S1rHpeB51TtXb5Fq9tgalKOvxnBe/RbHu5UXSK+DDRi/wuUwFeXi         GQVDPXyQPHZON9VOKsV3P8m0dzabU1gThAhwR2lqmHiowYcV27QCXqZ39U7SNciI5bhS         RQP2fz6GsVpjCRUE/0TTFRJ8zUbNqiVHudR3l3CC058B+ef9XB3iZelP4yqnUh9QEYd7         N/4Q==\"},{\"name\":\"ARC-Message-Signature\",\"value\":\"i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=in-reply-to:references:subject:from:date:message-id:auto-submitted         :to:dkim-signature;   ..."
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_SEND_MESSAGE",
+      "method": "POST",
+      "path": "/gmail/v1/users/me/messages/send",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "POST /gmail/v1/users/me/messages/send returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "id": "19d335d7703ec2d9",
+        "threadId": "19d335d7703ec2d9",
+        "labelIds": [
+          "SENT"
+        ]
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.send"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_LIST_LABELS",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/labels",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /gmail/v1/users/me/labels returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "labels": [
+          {
+            "id": "CHAT",
+            "name": "CHAT",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "SENT",
+            "name": "SENT",
+            "type": "system"
+          },
+          {
+            "id": "INBOX",
+            "name": "INBOX",
+            "type": "system"
+          },
+          {
+            "id": "IMPORTANT",
+            "name": "IMPORTANT",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "TRASH",
+            "name": "TRASH",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "DRAFT",
+            "name": "DRAFT",
+            "type": "system"
+          },
+          {
+            "id": "SPAM",
+            "name": "SPAM",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "CATEGORY_FORUMS",
+            "name": "CATEGORY_FORUMS",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "CATEGORY_UPDATES",
+            "name": "CATEGORY_UPDATES",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "CATEGORY_PERSONAL",
+            "name": "CATEGORY_PERSONAL",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "CATEGORY_PROMOTIONS",
+            "name": "CATEGORY_PROMOTIONS",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "CATEGORY_SOCIAL",
+            "name": "CATEGORY_SOCIAL",
+            "messageListVisibility": "hide",
+            "labelListVisibility": "labelHide",
+            "type": "system"
+          },
+          {
+            "id": "STARRED",
+            "name": "STARRED",
+            "type": "system"
+          },
+          {
+            "id": "UNREAD",
+            "name": "UNREAD",
+            "type": "system"
+          }
+        ]
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.labels"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_GET_PROFILE",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/profile",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /gmail/v1/users/me/profile returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "emailAddress": "[REDACTED_EMAIL]",
+        "messagesTotal": 92,
+        "threadsTotal": 87,
+        "historyId": "12133"
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_CREATE_DRAFT",
+      "method": "POST",
+      "path": "/gmail/v1/users/me/drafts",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "POST /gmail/v1/users/me/drafts returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "id": "r-[REDACTED_PHONE]705",
+        "message": {
+          "id": "19d335d763e6c377",
+          "threadId": "19d335d763e6c377",
+          "labelIds": [
+            "DRAFT"
+          ]
+        }
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.compose"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_LIST_THREADS",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/threads",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /gmail/v1/users/me/threads returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "threads": [
+          {
+            "id": "19d335bba9991684",
+            "snippet": "Address not found Your message wasn&#39;t delivered to [REDACTED_EMAIL] because the domain example.com couldn&#39;t be found. Check for typos or unnecessary spaces and try again. LEARN MORE This",
+            "historyId": "12082"
+          },
+          {
+            "id": "19d335bbaaf99504",
+            "snippet": "Automated test from endpoint validation agent.",
+            "historyId": "12026"
+          },
+          {
+            "id": "19d333dc2872f0cf",
+            "snippet": "You allowed Composio access to some of your Google Account data [REDACTED_EMAIL] If you didn&#39;t allow Composio access to some of your Google Account data, someone else may be trying to",
+            "historyId": "12038"
+          },
+          {
+            "id": "19d3334f95f7f523",
+            "snippet": "this is a test email",
+            "historyId": "11792"
+          },
+          {
+            "id": "19d2a99ee6f410cf",
+            "snippet": "The username for your Instagram account was changed from annabelleandpookiee at 07:43 (PDT) on Thursday, March 26 2026. Your new username is stopstalkinmindyourbusiness_. If you didn&#39;t change your",
+            "historyId": "11542"
+          }
+        ],
+        "nextPageToken": "[REDACTED_PHONE]26077",
+        "resultSizeEstimate": 201
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_TRASH_MESSAGE",
+      "method": "POST",
+      "path": "/gmail/v1/users/me/messages/{messageId}/trash",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "POST /gmail/v1/users/me/messages/{messageId}/trash returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "id": "19d335bc49f3ed53",
+        "threadId": "19d335bba9991684",
+        "labelIds": [
+          "UNREAD",
+          "TRASH",
+          "CATEGORY_UPDATES"
+        ]
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.modify"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_LIST_FOLDERS",
+      "method": "GET",
+      "path": "/gmail/v1/users/me/folders",
+      "status": "invalid_endpoint",
+      "http_status_code": 404,
+      "response_summary": "GET /gmail/v1/users/me/folders returned HTTP 404 — endpoint does not exist in the target API. Path not found.",
+      "response_body": "API returned HTML error page — endpoint path not found",
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GMAIL_ARCHIVE_MESSAGE",
+      "method": "POST",
+      "path": "/gmail/v1/users/me/messages/{messageId}/archive",
+      "status": "invalid_endpoint",
+      "http_status_code": 404,
+      "response_summary": "POST /gmail/v1/users/me/messages/{messageId}/archive returned HTTP 404 — endpoint does not exist in the target API. Path not found.",
+      "response_body": "API returned HTML error page — endpoint path not found",
+      "required_scopes": [
+        "https://www.googleapis.com/auth/gmail.modify"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_LIST_EVENTS",
+      "method": "GET",
+      "path": "/calendar/v3/calendars/primary/events",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /calendar/v3/calendars/primary/events returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "kind": "calendar#events",
+        "etag": "\"p32fvb1vjh71960o\"",
+        "summary": "[REDACTED_EMAIL]",
+        "description": "",
+        "updated": "2026-03-28T07:32:23.928Z",
+        "timeZone": "Asia/Kolkata",
+        "accessRole": "owner",
+        "defaultReminders": [
+          {
+            "method": "popup",
+            "minutes": 30
+          }
+        ],
+        "nextSyncToken": "CJ_1h_OJwpMDEJ_1h_OJwpMDGAUgufXnpwMoufXnpwM=",
+        "items": [
+          {
+            "kind": "calendar#event",
+            "etag": "\"[REDACTED_PHONE]2\"",
+            "id": "7ses1t6g8nl17ij9vlv6bignrd",
+            "status": "confirmed",
+            "htmlLink": "https://www.google.com/calendar/event?eid=N3NlczF0Nmc4bmwxN2lqOXZsdjZiaWducmQgYW5hYmVsbGVwb29raWVlQG0",
+            "created": "2026-03-28T06:49:33.000Z",
+            "updated": "2026-03-28T06:49:33.242Z",
+            "summary": "meeting",
+            "creator": {
+              "email": "[REDACTED_EMAIL]",
+              "self": true
+            },
+            "organizer": {
+              "email": "[REDACTED_EMAIL]",
+              "self": true
+            },
+            "start": {
+              "dateTime": "2026-03-28T14:30:00+05:30",
+              "timeZone": "Asia/Kolkata"
+            },
+            "end": {
+              "dateTime": "2026-03-28T15:30:00+05:30",
+              "timeZone": "Asia/Kolkata"
+            },
+            "iCalUID": "[REDACTED_EMAIL]",
+            "sequence": 0,
+            "reminders": {
+              "useDefault": true
+            },
+            "eventType": "default"
+          },
+          {
+            "kind": "calendar#event",
+            "etag": "\"[REDACTED_PHONE]0\"",
+            "id": "apf5dgbgdcho78gf5h7ah1hvqo",
+            "status": "confirmed",
+            "htmlLink": "https://www.google.com/calendar/event?eid=YXBmNWRnYmdkY2hvNzhnZjVoN2FoMWh2cW8gYW5hYmVsbGVwb29raWVlQG0",
+            "created": "2026-03-28T07:32:23.000Z",
+            "updated": "2026-03-28T07:32:23.392Z",
+            "summary": "test-summary",
+            "creator": {
+              "email": "[REDACTED_EMAIL]",
+              "self": true
+            },
+            "organizer": {
+              "email": "[REDACTED_EMAIL]",
+              "self": true
+            },
+            "start": {
+              "dateTime": "2026-03-28T14:02:22+05:30",
+              "timeZone": "UTC"
+            },
+            "end": {
+              "dateTime": "2026-03-28T15:02:22+05:30",
+              "timeZone": "UTC"
+            },
+            "iCalUID": "[REDACTED_EMAIL]",
+            "sequence": 0,
+            "reminders": {
+              "useDefault": true
+            },
+            "eventType": "default"
+          }
+        ]
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_CREATE_EVENT",
+      "method": "POST",
+      "path": "/calendar/v3/calendars/primary/events",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "POST /calendar/v3/calendars/primary/events returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "kind": "calendar#event",
+        "etag": "\"[REDACTED_PHONE]2\"",
+        "id": "t1a845rltk6gvggfn34ff80pbc",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=dDFhODQ1cmx0azZndmdnZm4zNGZmODBwYmMgYW5hYmVsbGVwb29raWVlQG0",
+        "created": "2026-03-28T07:34:16.000Z",
+        "updated": "2026-03-28T07:34:16.789Z",
+        "summary": "test-summary",
+        "creator": {
+          "email": "[REDACTED_EMAIL]",
+          "self": true
+        },
+        "organizer": {
+          "email": "[REDACTED_EMAIL]",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2026-03-28T14:04:16+05:30",
+          "timeZone": "UTC"
+        },
+        "end": {
+          "dateTime": "2026-03-28T15:04:16+05:30",
+          "timeZone": "UTC"
+        },
+        "iCalUID": "[REDACTED_EMAIL]",
+        "sequence": 0,
+        "reminders": {
+          "useDefault": true
+        },
+        "eventType": "default"
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.events"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_GET_EVENT",
+      "method": "GET",
+      "path": "/calendar/v3/calendars/primary/events/{eventId}",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /calendar/v3/calendars/primary/events/{eventId} returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "kind": "calendar#event",
+        "etag": "\"[REDACTED_PHONE]2\"",
+        "id": "7ses1t6g8nl17ij9vlv6bignrd",
+        "status": "confirmed",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N3NlczF0Nmc4bmwxN2lqOXZsdjZiaWducmQgYW5hYmVsbGVwb29raWVlQG0",
+        "created": "2026-03-28T06:49:33.000Z",
+        "updated": "2026-03-28T06:49:33.242Z",
+        "summary": "meeting",
+        "creator": {
+          "email": "[REDACTED_EMAIL]",
+          "self": true
+        },
+        "organizer": {
+          "email": "[REDACTED_EMAIL]",
+          "self": true
+        },
+        "start": {
+          "dateTime": "2026-03-28T14:30:00+05:30",
+          "timeZone": "Asia/Kolkata"
+        },
+        "end": {
+          "dateTime": "2026-03-28T15:30:00+05:30",
+          "timeZone": "Asia/Kolkata"
+        },
+        "iCalUID": "[REDACTED_EMAIL]",
+        "sequence": 0,
+        "reminders": {
+          "useDefault": true
+        },
+        "eventType": "default"
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_LIST_CALENDARS",
+      "method": "GET",
+      "path": "/calendar/v3/users/me/calendarList",
+      "status": "valid",
+      "http_status_code": 200,
+      "response_summary": "GET /calendar/v3/users/me/calendarList returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": {
+        "kind": "calendar#calendarList",
+        "etag": "\"p32fvb1vjh71960o\"",
+        "nextSyncToken": "CJ_1h_OJwpMDEhlhbmFiZWxsZXBvb2tpZWVAZ21haWwuY29t",
+        "items": [
+          {
+            "kind": "calendar#calendarListEntry",
+            "etag": "\"[REDACTED_PHONE]1\"",
+            "id": "[REDACTED_EMAIL]",
+            "summary": "[REDACTED_EMAIL]",
+            "timeZone": "Asia/Kolkata",
+            "colorId": "14",
+            "backgroundColor": "#9fe1e7",
+            "foregroundColor": "#000000",
+            "selected": true,
+            "accessRole": "owner",
+            "defaultReminders": [
+              {
+                "method": "popup",
+                "minutes": 30
+              }
+            ],
+            "notificationSettings": {
+              "notifications": [
+                {
+                  "type": "eventCreation",
+                  "method": "email"
+                },
+                {
+                  "type": "eventChange",
+                  "method": "email"
+                },
+                {
+                  "type": "eventCancellation",
+                  "method": "email"
+                },
+                {
+                  "type": "eventResponse",
+                  "method": "email"
+                }
+              ]
+            },
+            "primary": true,
+            "conferenceProperties": {
+              "allowedConferenceSolutionTypes": [
+                "hangoutsMeet"
+              ]
+            }
+          },
+          {
+            "kind": "calendar#calendarListEntry",
+            "etag": "\"[REDACTED_PHONE]1\"",
+            "id": "en.indian#[REDACTED_EMAIL]",
+            "summary": "Holidays in India",
+            "description": "Holidays and Observances in India",
+            "timeZone": "Asia/Kolkata",
+            "colorId": "8",
+            "backgroundColor": "#16a765",
+            "foregroundColor": "#000000",
+            "selected": true,
+            "accessRole": "reader",
+            "defaultReminders": [],
+            "conferenceProperties": {
+              "allowedConferenceSolutionTypes": [
+                "hangoutsMeet"
+              ]
+            }
+          }
+        ]
+      },
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_DELETE_EVENT",
+      "method": "DELETE",
+      "path": "/calendar/v3/calendars/primary/events/{eventId}",
+      "status": "valid",
+      "http_status_code": 204,
+      "response_summary": "DELETE /calendar/v3/calendars/primary/events/{eventId} returned HTTP 204 — endpoint exists and is callable. Response contains valid data.",
+      "response_body": "",
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.events"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    },
+    {
+      "tool_slug": "GOOGLECALENDAR_LIST_REMINDERS",
+      "method": "GET",
+      "path": "/calendar/v3/calendars/primary/reminders",
+      "status": "invalid_endpoint",
+      "http_status_code": 404,
+      "response_summary": "GET /calendar/v3/calendars/primary/reminders returned HTTP 404 — endpoint does not exist in the target API. Path not found.",
+      "response_body": "API returned HTML error page — endpoint path not found",
+      "required_scopes": [
+        "https://www.googleapis.com/auth/calendar.readonly"
+      ],
+      "available_scopes": [
+        "https://www.googleapis.com/auth/gmail.readonly",
+        "https://www.googleapis.com/auth/gmail.send",
+        "https://www.googleapis.com/auth/gmail.labels",
+        "https://www.googleapis.com/auth/gmail.compose",
+        "https://www.googleapis.com/auth/gmail.modify",
+        "https://www.googleapis.com/auth/calendar.readonly",
+        "https://www.googleapis.com/auth/calendar.events"
+      ]
+    }
+  ],
+  "summary": {
+    "valid": 13,
+    "invalid_endpoint": 3,
+    "insufficient_scopes": 0,
+    "error": 0
+  }
+}
