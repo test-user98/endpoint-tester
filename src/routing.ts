@@ -51,15 +51,18 @@ export async function discoverRouting(
 
   // For each prefix, find a simple GET endpoint to use as a probe
   for (const prefix of prefixes) {
-    const probe = endpoints.find(
+    // Gather ALL simple GET endpoints for this prefix — if the first one
+    // happens to be fake (404), we try the next one.
+    const probes = endpoints.filter(
       ep => ep.path.startsWith(prefix) && ep.method === "GET" && ep.parameters.path.length === 0,
     );
-    if (!probe) {
+    if (probes.length === 0) {
       log.warn("discovery", `No simple GET endpoint found for prefix ${prefix}, skipping probe`);
       continue;
     }
 
-    log.info("discovery", `Probing prefix "${prefix}" with ${probe.method} ${probe.path}`);
+    const probe = probes[0];
+    log.info("discovery", `Probing prefix "${prefix}" with ${probe.method} ${probe.path} (${probes.length} candidates)`);
 
     let found = false;
     for (const account of accounts) {
@@ -116,6 +119,22 @@ export async function discoverRouting(
         log.info("discovery", `✓ ${prefix} → account ${account.id} (${account.toolkit?.slug}), relative path (got 429 = routing works)`);
         found = true;
         break;
+      }
+
+      // Strategy 5: Probe returned "not_found" (JSON 404) — the probe endpoint
+      // itself might be fake. Try other probe candidates for this prefix.
+      if (r1 === "not_found" && probes.length > 1) {
+        log.warn("discovery", `Probe ${probe.path} returned 404, trying alternate probes`);
+        for (const altProbe of probes.slice(1)) {
+          const rAlt = await probeEndpoint(composio, altProbe.path, account.id);
+          if (rAlt === "ok") {
+            routing.set(prefix, { connectedAccountId: account.id, baseUrl: "" });
+            log.info("discovery", `✓ ${prefix} → account ${account.id} (${account.toolkit?.slug}), relative path (alt probe: ${altProbe.path})`);
+            found = true;
+            break;
+          }
+        }
+        if (found) break;
       }
     }
 

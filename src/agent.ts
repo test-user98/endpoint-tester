@@ -135,7 +135,22 @@ async function runEndpointAgent(ctx: AgentContext): Promise<EndpointReport> {
       }
 
       // Resolve from cache
-      const value = cache.resolve(path, param.name, isDestructive);
+      let value = cache.resolve(path, param.name, isDestructive);
+
+      // If cache is empty (e.g., list returned 0 items), wait briefly for
+      // other providers that share the same path (e.g., CREATE_EVENT also
+      // caches under the same path as LIST_EVENTS).
+      if (!value && basePath) {
+        const otherProviders = allEndpoints.filter(
+          ep => ep.path === basePath && ep.parameters.path.length === 0 && ep.tool_slug !== endpoint.tool_slug,
+        );
+        if (otherProviders.length > 0) {
+          log.debug("dependency", `Cache empty, waiting 2s for other providers to populate...`);
+          await sleep(2000);
+          value = cache.resolve(path, param.name, isDestructive);
+        }
+      }
+
       if (value) {
         resolvedPath = resolvedPath.replace(`{${param.name}}`, value);
         log.info("dependency", `Resolved {${param.name}} = "${value}"`);

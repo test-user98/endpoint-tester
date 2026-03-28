@@ -47,17 +47,29 @@ export class ResourceCache {
 
       for (const key of Object.keys(obj)) {
         const val = obj[key];
-        if (!Array.isArray(val) || val.length === 0 || !isObject(val[0])) continue;
+        if (!Array.isArray(val)) continue;
+
+        // Skip empty arrays — no resources to cache
+        if (val.length === 0) continue;
+
+        if (!isObject(val[0])) continue;
 
         const candidate = val.filter(isObject);
         let score = 0;
 
         // Score: items with "id" field are most likely resource arrays
-        if (candidate.some(c => c.id != null)) score += 10;
+        const hasIds = candidate.some(c => c.id != null || c.uid != null || c.uuid != null || c.key != null);
+        if (hasIds) score += 10;
+
         // Score: standard list response keys get a boost
         if (["items", "messages", "events", "threads", "labels", "calendars", "results", "data"].includes(key)) score += 5;
+
         // Score: longer arrays are more likely to be the primary list
         score += Math.min(candidate.length, 5);
+
+        // Skip arrays with no identifiable resources (e.g., defaultReminders, metadata)
+        // unless they match a standard key name
+        if (!hasIds && score < 5) continue;
 
         if (score > bestScore) {
           bestScore = score;

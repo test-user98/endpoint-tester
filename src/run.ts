@@ -87,7 +87,7 @@ function validateReport(
 async function main() {
   console.log("Loading endpoint definitions...");
   const allEndpoints = flattenEndpoints(endpoints);
-  console.log(`Found ${allEndpoints.length} endpoints to test.\n`);
+  console.log(`Found ${JSON.stringify(allEndpoints.length)} endpoints to test.\n`);
 
   const composio = new Composio();
 

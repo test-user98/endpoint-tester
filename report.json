@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-03-28T07:41:26.949Z",
+  "timestamp": "2026-03-28T08:41:26.430Z",
   "total_endpoints": 16,
   "results": [
     {
@@ -12,27 +12,27 @@
       "response_body": {
         "messages": [
           {
-            "id": "19d335d7c420e698",
-            "threadId": "19d335d7703ec2d9"
+            "id": "19d3390ad1a3d2e9",
+            "threadId": "19d3390ad1a3d2e9"
           },
           {
-            "id": "19d335d7703ec2d9",
-            "threadId": "19d335d7703ec2d9"
+            "id": "19d3390acd1a90c0",
+            "threadId": "19d3390acd1a90c0"
           },
           {
-            "id": "19d335d763e6c377",
-            "threadId": "19d335d763e6c377"
+            "id": "19d338b41714bb38",
+            "threadId": "19d338b41714bb38"
           },
           {
-            "id": "19d335bbaaf99504",
-            "threadId": "19d335bbaaf99504"
+            "id": "19d338af3331edbe",
+            "threadId": "19d338af3331edbe"
           },
           {
-            "id": "19d335bba9991684",
-            "threadId": "19d335bba9991684"
+            "id": "19d338abe1cff98e",
+            "threadId": "19d338abe1cff98e"
           }
         ],
-        "nextPageToken": "[REDACTED_PHONE]30142",
+        "nextPageToken": "[REDACTED_PHONE]41618",
         "resultSizeEstimate": 201
       },
       "required_scopes": [
@@ -56,9 +56,54 @@
       "http_status_code": 200,
       "response_summary": "GET /gmail/v1/users/me/messages/{messageId} returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
-        "_truncated": true,
-        "_original_bytes": 18478,
-        "_preview": "{\"id\":\"19d335d7c420e698\",\"threadId\":\"19d335d7703ec2d9\",\"labelIds\":[\"CATEGORY_UPDATES\",\"INBOX\"],\"snippet\":\"Address not found Your message wasn&#39;t delivered to [REDACTED_EMAIL] because the domain example.com couldn&#39;t be found. Check for typos or unnecessary spaces and try again. LEARN MORE This\",\"payload\":{\"partId\":\"\",\"mimeType\":\"multipart/report\",\"filename\":\"\",\"headers\":[{\"name\":\"Delivered-To\",\"value\":\"[REDACTED_EMAIL]\"},{\"name\":\"Received\",\"value\":\"by 2002:a05:6638:411d:b0:5d4:784:e62c with SMTP id ay29csp356207jab;        Sat, 28 Mar 2026 00:34:18 -0700 (PDT)\"},{\"name\":\"X-Received\",\"value\":\"by 2002:a05:6830:6d46:b0:7d7:39a9:4c1f with SMTP id 46e09a7af769-7d9faf0892dmr2717284a34.28.[REDACTED_PHONE];        Sat, 28 Mar 2026 00:34:18 -0700 (PDT)\"},{\"name\":\"ARC-Seal\",\"value\":\"i=1; a=rsa-sha256; t=[REDACTED_PHONE]; cv=none;        d=google.com; s=arc-20240605;        b=WGPmOOnhm3ej5UhJJ90CuqCaBkleup3zq8GRszcWSfR713wnQSbGIJmjLL6eDEYjP8         /P1A73Tlgf2QKt/2E12vcqWl97oCc1pyzudipmWUTshN0JSHPwCLZuQz6BVrohE4XXgO         sQzg1GG5PztWF0hYFwkyL5ctuY1Z5WxOyYN/KpcKf/XE3tsY3P8dW0v857jSZf8Pucbt         PqNiVHz8np+dyMCNNT7scaDBjxT8URT4GO51cQohV4OVsGwya03Sn/wxjff3UzWSEFca         29HGzjteHCSfDcZZDg3KU+U5z8wlGF4qpRwSCSZBWcbfwRDnASMH6nCP5DCvExWNVgM9         WM0w==\"},{\"name\":\"ARC-Message-Signature\",\"value\":\"i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;        h=in-reply-to:references:subject:from:date:message-id:auto-submitted         :to:dkim-signature;        bh=J..."
+        "id": "19d3390ad1a3d2e9",
+        "threadId": "19d3390ad1a3d2e9",
+        "labelIds": [
+          "DRAFT"
+        ],
+        "snippet": "Automated test from endpoint validation agent.",
+        "payload": {
+          "partId": "",
+          "mimeType": "text/plain",
+          "filename": "",
+          "headers": [
+            {
+              "name": "Received",
+              "value": "from [REDACTED_PHONE] named unknown by gmailapi.google.com with HTTPREST; Sat, 28 Mar 2026 01:30:12 -0700"
+            },
+            {
+              "name": "From",
+              "value": "[REDACTED_EMAIL]"
+            },
+            {
+              "name": "To",
+              "value": "[REDACTED_EMAIL]"
+            },
+            {
+              "name": "Subject",
+              "value": "Endpoint Validation Test"
+            },
+            {
+              "name": "Content-Type",
+              "value": "text/plain; charset=utf-8"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 28 Mar 2026 01:30:12 -0700"
+            },
+            {
+              "name": "Message-Id",
+              "value": "<CAGXJibJAHm=[REDACTED_EMAIL]>"
+            }
+          ],
+          "body": {
+            "size": 46,
+            "data": "QXV0b21hdGVkIHRlc3QgZnJvbSBlbmRwb2ludCB2YWxpZGF0aW9uIGFnZW50Lg=="
+          }
+        },
+        "sizeEstimate": 424,
+        "historyId": "13508",
+        "internalDate": "[REDACTED_PHONE]"
       },
       "required_scopes": [
         "https://www.googleapis.com/auth/gmail.readonly"
@@ -81,8 +126,8 @@
       "http_status_code": 200,
       "response_summary": "POST /gmail/v1/users/me/messages/send returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
-        "id": "19d[REDACTED_PHONE]bd0",
-        "threadId": "19d[REDACTED_PHONE]bd0",
+        "id": "19d339ae91e2d557",
+        "threadId": "19d339ae91e2d557",
         "labelIds": [
           "SENT"
         ]
@@ -221,9 +266,9 @@
       "response_summary": "GET /gmail/v1/users/me/profile returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
         "emailAddress": "[REDACTED_EMAIL]",
-        "messagesTotal": 94,
-        "threadsTotal": 89,
-        "historyId": "12411"
+        "messagesTotal": 108,
+        "threadsTotal": 104,
+        "historyId": "13552"
       },
       "required_scopes": [
         "https://www.googleapis.com/auth/gmail.readonly"
@@ -246,10 +291,10 @@
       "http_status_code": 200,
       "response_summary": "POST /gmail/v1/users/me/drafts returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
-        "id": "r[REDACTED_PHONE]2494",
+        "id": "r-[REDACTED_PHONE]1427",
         "message": {
-          "id": "19d336402051c7b1",
-          "threadId": "19d336402051c7b1",
+          "id": "19d339ae977f62d7",
+          "threadId": "19d339ae977f62d7",
           "labelIds": [
             "DRAFT"
           ]
@@ -278,32 +323,32 @@
       "response_body": {
         "threads": [
           {
-            "id": "19d335d7703ec2d9",
-            "snippet": "Address not found Your message wasn&#39;t delivered to [REDACTED_EMAIL] because the domain example.com couldn&#39;t be found. Check for typos or unnecessary spaces and try again. LEARN MORE This",
-            "historyId": "12354"
-          },
-          {
-            "id": "19d335d763e6c377",
+            "id": "19d3390ad1a3d2e9",
             "snippet": "Automated test from endpoint validation agent.",
-            "historyId": "12135"
+            "historyId": "13508"
           },
           {
-            "id": "19d335bbaaf99504",
+            "id": "19d3390acd1a90c0",
             "snippet": "Automated test from endpoint validation agent.",
-            "historyId": "12026"
+            "historyId": "13552"
           },
           {
-            "id": "19d335bba9991684",
+            "id": "19d338b41714bb38",
             "snippet": "Automated test from endpoint validation agent.",
-            "historyId": "12162"
+            "historyId": "13464"
           },
           {
-            "id": "19d333dc2872f0cf",
-            "snippet": "You allowed Composio access to some of your Google Account data [REDACTED_EMAIL] If you didn&#39;t allow Composio access to some of your Google Account data, someone else may be trying to",
-            "historyId": "12409"
+            "id": "19d338af3331edbe",
+            "snippet": "Automated test from endpoint validation agent.",
+            "historyId": "13462"
+          },
+          {
+            "id": "19d338abe1cff98e",
+            "snippet": "Automated test from endpoint validation agent.",
+            "historyId": "13403"
           }
         ],
-        "nextPageToken": "[REDACTED_PHONE]21937",
+        "nextPageToken": "[REDACTED_PHONE]41618",
         "resultSizeEstimate": 201
       },
       "required_scopes": [
@@ -327,11 +372,11 @@
       "http_status_code": 200,
       "response_summary": "POST /gmail/v1/users/me/messages/{messageId}/trash returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
-        "id": "19d335d7c420e698",
-        "threadId": "19d335d7703ec2d9",
+        "id": "19d3390ad1a3d2e9",
+        "threadId": "19d3390ad1a3d2e9",
         "labelIds": [
-          "TRASH",
-          "CATEGORY_UPDATES"
+          "DRAFT",
+          "TRASH"
         ]
       },
       "required_scopes": [
@@ -398,10 +443,10 @@
       "response_summary": "GET /calendar/v3/calendars/primary/events returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
         "kind": "calendar#events",
-        "etag": "\"p337u16d9hb1960o\"",
+        "etag": "\"p32fvnsf9ir1960o\"",
         "summary": "[REDACTED_EMAIL]",
         "description": "",
-        "updated": "2026-03-28T07:34:17.466Z",
+        "updated": "2026-03-28T08:30:14.355Z",
         "timeZone": "Asia/Kolkata",
         "accessRole": "owner",
         "defaultReminders": [
@@ -410,73 +455,8 @@
             "minutes": 30
           }
         ],
-        "nextSyncToken": "CM_gmamKwpMDEM_gmamKwpMDGAUgufXnpwMoufXnpwM=",
-        "items": [
-          {
-            "kind": "calendar#event",
-            "etag": "\"[REDACTED_PHONE]2\"",
-            "id": "7ses1t6g8nl17ij9vlv6bignrd",
-            "status": "confirmed",
-            "htmlLink": "https://www.google.com/calendar/event?eid=N3NlczF0Nmc4bmwxN2lqOXZsdjZiaWducmQgYW5hYmVsbGVwb29raWVlQG0",
-            "created": "2026-03-28T06:49:33.000Z",
-            "updated": "2026-03-28T06:49:33.242Z",
-            "summary": "meeting",
-            "creator": {
-              "email": "[REDACTED_EMAIL]",
-              "self": true
-            },
-            "organizer": {
-              "email": "[REDACTED_EMAIL]",
-              "self": true
-            },
-            "start": {
-              "dateTime": "2026-03-28T14:30:00+05:30",
-              "timeZone": "Asia/Kolkata"
-            },
-            "end": {
-              "dateTime": "2026-03-28T15:30:00+05:30",
-              "timeZone": "Asia/Kolkata"
-            },
-            "iCalUID": "[REDACTED_EMAIL]",
-            "sequence": 0,
-            "reminders": {
-              "useDefault": true
-            },
-            "eventType": "default"
-          },
-          {
-            "kind": "calendar#event",
-            "etag": "\"[REDACTED_PHONE]2\"",
-            "id": "t1a845rltk6gvggfn34ff80pbc",
-            "status": "confirmed",
-            "htmlLink": "https://www.google.com/calendar/event?eid=dDFhODQ1cmx0azZndmdnZm4zNGZmODBwYmMgYW5hYmVsbGVwb29raWVlQG0",
-            "created": "2026-03-28T07:34:16.000Z",
-            "updated": "2026-03-28T07:34:16.789Z",
-            "summary": "test-summary",
-            "creator": {
-              "email": "[REDACTED_EMAIL]",
-              "self": true
-            },
-            "organizer": {
-              "email": "[REDACTED_EMAIL]",
-              "self": true
-            },
-            "start": {
-              "dateTime": "2026-03-28T14:04:16+05:30",
-              "timeZone": "UTC"
-            },
-            "end": {
-              "dateTime": "2026-03-28T15:04:16+05:30",
-              "timeZone": "UTC"
-            },
-            "iCalUID": "[REDACTED_EMAIL]",
-            "sequence": 0,
-            "reminders": {
-              "useDefault": true
-            },
-            "eventType": "default"
-          }
-        ]
+        "nextPageToken": "CkAKMAouCgwIkJqezgYQmPjIsgMSHgocCho3YXRuOWpwaGFtNXBuOG45aTZqZ2VlaG80MBoMCLOons4GEIC72OQBwD4B",
+        "items": []
       },
       "required_scopes": [
         "https://www.googleapis.com/auth/calendar.readonly"
@@ -500,12 +480,12 @@
       "response_summary": "POST /calendar/v3/calendars/primary/events returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
         "kind": "calendar#event",
-        "etag": "\"[REDACTED_PHONE]8\"",
-        "id": "3f8shsn0tfnapc6oncb4v1r228",
+        "etag": "\"[REDACTED_PHONE]4\"",
+        "id": "ntfo6ft96g1ofmh0tb69dvu5co",
         "status": "confirmed",
-        "htmlLink": "https://www.google.com/calendar/event?eid=M2Y4c2hzbjB0Zm5hcGM2b25jYjR2MXIyMjggYW5hYmVsbGVwb29raWVlQG0",
-        "created": "2026-03-28T07:41:25.000Z",
-        "updated": "2026-03-28T07:41:26.100Z",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bnRmbzZmdDk2ZzFvZm1oMHRiNjlkdnU1Y28gYW5hYmVsbGVwb29raWVlQG0",
+        "created": "2026-03-28T08:41:23.000Z",
+        "updated": "2026-03-28T08:41:23.631Z",
         "summary": "test-summary",
         "creator": {
           "email": "[REDACTED_EMAIL]",
@@ -516,11 +496,11 @@
           "self": true
         },
         "start": {
-          "dateTime": "2026-03-28T14:11:25+05:30",
+          "dateTime": "2026-03-28T15:11:23+05:30",
           "timeZone": "UTC"
         },
         "end": {
-          "dateTime": "2026-03-28T15:11:25+05:30",
+          "dateTime": "2026-03-28T16:11:23+05:30",
           "timeZone": "UTC"
         },
         "iCalUID": "[REDACTED_EMAIL]",
@@ -552,13 +532,13 @@
       "response_summary": "GET /calendar/v3/calendars/primary/events/{eventId} returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
         "kind": "calendar#event",
-        "etag": "\"[REDACTED_PHONE]2\"",
-        "id": "7ses1t6g8nl17ij9vlv6bignrd",
+        "etag": "\"[REDACTED_PHONE]4\"",
+        "id": "ntfo6ft96g1ofmh0tb69dvu5co",
         "status": "confirmed",
-        "htmlLink": "https://www.google.com/calendar/event?eid=N3NlczF0Nmc4bmwxN2lqOXZsdjZiaWducmQgYW5hYmVsbGVwb29raWVlQG0",
-        "created": "2026-03-28T06:49:33.000Z",
-        "updated": "2026-03-28T06:49:33.242Z",
-        "summary": "meeting",
+        "htmlLink": "https://www.google.com/calendar/event?eid=bnRmbzZmdDk2ZzFvZm1oMHRiNjlkdnU1Y28gYW5hYmVsbGVwb29raWVlQG0",
+        "created": "2026-03-28T08:41:23.000Z",
+        "updated": "2026-03-28T08:41:23.631Z",
+        "summary": "test-summary",
         "creator": {
           "email": "[REDACTED_EMAIL]",
           "self": true
@@ -568,12 +548,12 @@
           "self": true
         },
         "start": {
-          "dateTime": "2026-03-28T14:30:00+05:30",
-          "timeZone": "Asia/Kolkata"
+          "dateTime": "2026-03-28T15:11:23+05:30",
+          "timeZone": "UTC"
         },
         "end": {
-          "dateTime": "2026-03-28T15:30:00+05:30",
-          "timeZone": "Asia/Kolkata"
+          "dateTime": "2026-03-28T16:11:23+05:30",
+          "timeZone": "UTC"
         },
         "iCalUID": "[REDACTED_EMAIL]",
         "sequence": 0,
@@ -604,8 +584,8 @@
       "response_summary": "GET /calendar/v3/users/me/calendarList returned HTTP 200 — endpoint exists and is callable. Response contains valid data.",
       "response_body": {
         "kind": "calendar#calendarList",
-        "etag": "\"p337u16d9hb1960o\"",
-        "nextSyncToken": "CM_gmamKwpMDEhlhbmFiZWxsZXBvb2tpZWVAZ21haWwuY29t",
+        "etag": "\"p32fvnsf9ir1960o\"",
+        "nextSyncToken": "CJ_78emWwpMDEhlhbmFiZWxsZXBvb2tpZWVAZ21haWwuY29t",
         "items": [
           {
             "kind": "calendar#calendarListEntry",
