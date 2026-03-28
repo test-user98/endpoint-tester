@@ -72,8 +72,9 @@ export async function discoverRouting(
         break;
       }
 
+      // Strategy 2: Routing issue (HTML 404) — proxy sent request to wrong host.
+      // Try full URL patterns with this account.
       if (r1 === "routing_issue") {
-        // Strategy 2: Try common full URL base patterns
         const bases = guessBaseUrls(prefix);
         for (const base of bases) {
           const r2 = await probeEndpoint(composio, base + probe.path, account.id);
@@ -83,19 +84,42 @@ export async function discoverRouting(
             found = true;
             break;
           }
+          // r2 === "wrong_account" with full URL means endpoint exists at this host
+          // but needs a different account — try full URL with remaining accounts
+          if (r2 === "wrong_account") {
+            log.debug("discovery", `Full URL ${base} routed OK but account ${account.id} got auth error, trying other accounts`);
+            for (const otherAccount of accounts) {
+              if (otherAccount.id === account.id) continue;
+              const r3 = await probeEndpoint(composio, base + probe.path, otherAccount.id);
+              if (r3 === "ok") {
+                routing.set(prefix, { connectedAccountId: otherAccount.id, baseUrl: base });
+                log.info("discovery", `✓ ${prefix} → account ${otherAccount.id} (${otherAccount.toolkit?.slug}), base: ${base}`);
+                found = true;
+                break;
+              }
+            }
+            if (found) break;
+          }
         }
         if (found) break;
       }
 
-      // Strategy 3: "wrong account" (403/401) means the endpoint exists but this account can't access it
-      // Keep trying other accounts
+      // Strategy 3: Wrong account (403/401) — endpoint exists at this path,
+      // but this account doesn't have access. Keep trying other accounts.
       if (r1 === "wrong_account") {
-        log.debug("discovery", `Account ${account.id} (${account.toolkit?.slug}) got auth error for ${prefix}`);
+        log.debug("discovery", `Account ${account.id} (${account.toolkit?.slug}) got auth error for ${prefix}, trying next`);
+      }
+
+      // Strategy 4: Rate limited (429) — routing works! Back off and accept.
+      if (r1 === "rate_limited") {
+        routing.set(prefix, { connectedAccountId: account.id, baseUrl: "" });
+        log.info("discovery", `✓ ${prefix} → account ${account.id} (${account.toolkit?.slug}), relative path (got 429 = routing works)`);
+        found = true;
+        break;
       }
     }
 
     if (!found) {
-      // Fallback: use the first account with relative path
       log.warn("discovery", `Could not find working account for prefix ${prefix}, using first account as fallback`);
       routing.set(prefix, { connectedAccountId: accounts[0].id, baseUrl: "" });
     }
@@ -133,7 +157,7 @@ function getPathPrefix(path: string): string {
   return "/" + segments.slice(0, 2).join("/");
 }
 
-type ProbeResult = "ok" | "routing_issue" | "wrong_account" | "not_found" | "error";
+type ProbeResult = "ok" | "routing_issue" | "wrong_account" | "not_found" | "rate_limited" | "error";
 
 async function probeEndpoint(
   composio: Composio,

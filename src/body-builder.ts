@@ -141,7 +141,7 @@ function generateStringValue(name: string, desc: string): string {
 
   // Email fields
   if (desc.includes("email address") || name.toLowerCase().includes("email")) {
-    return "agent-test@example.com";
+    return "sipanijai@gmail.com";
   }
 
   // Enum-like fields — check for "acceptable values" pattern
@@ -222,8 +222,8 @@ function buildObjectFromDescription(fieldName: string, description: string): Rec
  */
 function createBase64Email(): string {
   const msg = [
-    "From: agent-test@example.com",
-    "To: agent-test@example.com",
+    "From: sipanijai@gmail.com",
+    "To: sipanijai@gmail.com",
     "Subject: Endpoint Validation Test",
     "Content-Type: text/plain; charset=utf-8",
     "",
